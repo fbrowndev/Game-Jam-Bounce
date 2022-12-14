@@ -343,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6816852908253554925}
   - component: {fileID: 7482882005759285682}
+  - component: {fileID: -3293169621377726122}
   m_Layer: 0
   m_Name: Color Beam 4
   m_TagString: Beam
@@ -395,6 +396,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7814331, y: 10.179813}
   m_EdgeRadius: 0
+--- !u!114 &-3293169621377726122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816852908253554924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a0ec04fe84c40459bd30f87e87c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beamMoveSpeed: 3
 --- !u!1 &6816852908551835070
 GameObject:
   m_ObjectHideFlags: 0

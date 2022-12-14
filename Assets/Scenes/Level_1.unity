@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10421229}
+  - component: {fileID: 10421230}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -154,6 +155,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10421230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10421228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295db73f2f0c4a74eb042f01f1573d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beams: []
+  spawnTime: 2
+  spawnSpeed: 3
 --- !u!1 &83015101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,78 +1479,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8113871112596367186
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6816852908253554924, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_Name
-      value: Color Beam 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.990337
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816852908253554925, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
---- !u!1 &8113871112596367187 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6816852908253554924, guid: a2a259eedcec6a04ba3bd09795acade8, type: 3}
-  m_PrefabInstance: {fileID: 8113871112596367186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8113871112596367188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113871112596367187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a0ec04fe84c40459bd30f87e87c03d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beamMoveSpeed: 3
