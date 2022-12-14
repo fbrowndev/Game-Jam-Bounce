@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerBounce();
-        ColorSwitcher();
         BasicMovement();
     }
 
@@ -68,19 +67,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Beam")
+        {
+            ColorSwitcher();
+        }
+    }
+
     #endregion
 
     #region Color Mechanics
+    /// <summary>
+    /// Color switcher will be handled from collision handlers
+    /// </summary>
     void ColorSwitcher()
     {
         int RandomColor = Random.Range(0, color.Length);
 
-        //Will be added to collision handlers later
-        //Added just for testing purposes
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            sr.color = color[RandomColor];
-        }
+        sr.color = color[RandomColor];
     }
 
     #endregion
