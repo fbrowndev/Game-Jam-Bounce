@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Destroyer
   - Beam
+  - Red
+  - Green
+  - Blue
+  - Yellow
   layers:
   - Default
   - TransparentFX

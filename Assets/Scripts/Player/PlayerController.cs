@@ -11,14 +11,21 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
 
+    GameController gameController;
+
     [Header("Bounce Power")]
     [SerializeField] float bounceForce = 1f;
     [SerializeField] float moveSpeed = 1f;
 
     [Header("Player Colors")]
     [SerializeField] Color[] color;
+    //container for all the tags
+    string[] colorHolder = { "Red", "Green", "Blue", "Yellow" };
 
     bool isGrounded = true;
+
+    int playerPoints = 2;
+    int playerLivesRemaining = 3;
     #endregion
 
 
@@ -28,6 +35,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ColorSwitcher();
+
+        //Gaining access to the script
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -35,6 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerBounce();
         BasicMovement();
+        GameOverChecker();
     }
 
 
@@ -65,14 +76,48 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
-
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Checking if the collision tag and color match
+        if (collision.gameObject.tag == "Red" && sr.color == color[1])
+        {
+            gameController.AddScore(playerPoints);
+            Debug.Log("Working");
+        }
+        else if (collision.gameObject.tag == "Blue" && sr.color == color[0])
+        {
+            gameController.AddScore(playerPoints);
+            Debug.Log("Working");
+        }
+        else if (collision.gameObject.tag == "Green" && sr.color == color[2])
+        {
+            gameController.AddScore(playerPoints);
+            Debug.Log("Working");
+        }
+        else if (collision.gameObject.tag == "Yellow" && sr.color == color[3])
+        {
+            gameController.AddScore(playerPoints);
+            Debug.Log("Working");
+        }
+        else
+        {
+            playerLivesRemaining -= 1;
+            Debug.Log(playerLivesRemaining + "Lives Remaining");
+        }
+    }
+
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Beam")
+        //Doing a color check
+        for (int i = 0; i < colorHolder.Length; i++)
         {
-            ColorSwitcher();
+            if (collision.gameObject.tag == colorHolder[i])
+            {
+                ColorSwitcher();
+            }
         }
     }
 
@@ -87,6 +132,17 @@ public class PlayerController : MonoBehaviour
         int RandomColor = Random.Range(0, color.Length);
 
         sr.color = color[RandomColor];
+    }
+
+    #endregion
+
+    #region Game Mechanics
+    void GameOverChecker()
+    {
+        if(playerLivesRemaining <= 0)
+        {
+            gameController.GameOver();
+        }
     }
 
     #endregion
