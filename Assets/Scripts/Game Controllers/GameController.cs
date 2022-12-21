@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     {
         score = 0;
         scoreText.text = "Score: " + score;
+        isGameOver = false;
     }
 
     // Update is called once per frame

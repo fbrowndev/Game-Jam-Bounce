@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     #region Player Movement Methods
     void PlayerBounce()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && gameController.isGameOver == false)
         {
             rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
             isGrounded = false;
@@ -61,10 +61,13 @@ public class PlayerController : MonoBehaviour
 
     void BasicMovement()
     {
-        float horizontalMovement = Input.GetAxis("Horizontal");
-        Vector2 Movement = Vector2.right * horizontalMovement * moveSpeed;
+        if(gameController.isGameOver == false)
+        {
+            float horizontalMovement = Input.GetAxis("Horizontal");
+            Vector2 Movement = Vector2.right * horizontalMovement * moveSpeed;
 
-        transform.Translate(Movement * Time.deltaTime);
+            transform.Translate(Movement * Time.deltaTime);
+        }
     }
 
     #endregion

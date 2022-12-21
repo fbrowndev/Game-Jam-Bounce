@@ -11,8 +11,14 @@ public class BeamMover : MonoBehaviour
     [Header("Beam Speed")]
     public float beamMoveSpeed = 3f;
 
-
+    GameController gameController;
     #endregion
+
+    void Start()
+    {
+        //Gaining access to the script
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,6 +44,9 @@ public class BeamMover : MonoBehaviour
     void BeamDestroyer()
     {
         if(transform.position.x <= -20)
+        {
+            Destroy(gameObject);
+        } else if (gameController.isGameOver)
         {
             Destroy(gameObject);
         }

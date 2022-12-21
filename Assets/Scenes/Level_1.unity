@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 1619081772131626339, guid: 22e9017b0b88d084cafa80b7856da9dd, type: 3}
   - {fileID: 1084517647644925314, guid: 2217384d60a64d64188c1039f05ea4f1, type: 3}
   spawnTime: 2
-  spawnSpeed: 3
+  spawnSpeed: 5
   spawnPosition: {x: 20, y: 0}
 --- !u!1 &83015101
 GameObject:
@@ -1639,6 +1639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2136502173}
+  isGameOver: 0
 --- !u!4 &2123906321
 Transform:
   m_ObjectHideFlags: 0
@@ -1687,9 +1688,9 @@ RectTransform:
   m_Father: {fileID: 130237729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: 121}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: -34}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136502173

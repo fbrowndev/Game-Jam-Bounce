@@ -18,6 +18,9 @@ public class SpawnerController : MonoBehaviour
     //Starting location
     [SerializeField] Vector2 spawnPosition = new Vector2(20, 0);
 
+    //accessing script
+    GameController gameController;
+
     #endregion
 
 
@@ -25,6 +28,8 @@ public class SpawnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+
         InvokeRepeating("BeamSpawn", spawnTime, spawnSpeed);
     }
 
@@ -37,9 +42,12 @@ public class SpawnerController : MonoBehaviour
     #region Spawn Methods
     void BeamSpawn()
     {
-        int RandomBeam = Random.Range(0, beams.Length);
+        if(gameController.isGameOver == false)
+        {
+            int RandomBeam = Random.Range(0, beams.Length);
 
-        Instantiate(beams[RandomBeam], spawnPosition, Quaternion.identity);
+            Instantiate(beams[RandomBeam], spawnPosition, Quaternion.identity);
+        } 
     }
 
 
