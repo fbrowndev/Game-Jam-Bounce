@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded = true;
 
     int playerPoints = 2;
-    int playerLivesRemaining = 3;
+    [HideInInspector]public int playerLivesRemaining = 3;
     #endregion
 
 
